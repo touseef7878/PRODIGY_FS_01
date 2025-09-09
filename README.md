@@ -30,7 +30,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/your_username/PRODIGY_FS_01.git
+    git clone https://github.com/touseef7878/PRODIGY_FS_01.git
     cd PRODIGY_FS_01
     ```
 2.  **Create and activate a virtual environment:**
