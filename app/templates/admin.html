@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Secure Auth{% endblock %}
+
+{% block content %}
+<div class="dashboard-container fade-in-up">
+    <div class="dashboard-header">
+        <h1 class="auth-title">Admin Panel</h1>
+        <p class="auth-subtitle">Restricted area — admins only</p>
+    </div>
+
+    <div class="container-glass" style="padding:24px; max-width:900px; margin:0 auto;">
+        <p class="helper">You have administrator access.</p>
+        <div class="dashboard-nav" style="margin-top:16px;">
+            <a class="nav-link" href="{{ url_for('main.dashboard') }}">Back to Dashboard</a>
+        </div>
+        <div style="margin-top:24px;">
+            <p class="helper">This is a placeholder for admin-only features (user management, audit logs, etc.).</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

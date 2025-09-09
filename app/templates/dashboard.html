@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Secure Auth{% endblock %}
+
+{% block content %}
+<div class="dashboard-container fade-in-up">
+    <div class="dashboard-header">
+        <h1 class="auth-title">Dashboard</h1>
+        <p class="auth-subtitle">Welcome, {{ current_user.username }}{% if current_user.is_admin() %} (admin){% endif %}</p>
+    </div>
+
+    <div class="container-glass" style="padding:24px; max-width:800px; margin:0 auto;">
+        <p class="helper">Your email: <strong>{{ current_user.email }}</strong></p>
+        <p class="helper">Role: <strong>{{ current_user.get_role() }}</strong></p>
+
+        <div class="dashboard-nav" style="margin-top:16px;">
+            <a class="nav-link" href="{{ url_for('main.dashboard') }}">Home</a>
+            {% if current_user.is_admin() %}
+            <a class="nav-link" href="{{ url_for('main.admin') }}">Admin</a>
+            {% endif %}
+        </div>
+
+        <form method="POST" action="{{ url_for('auth.logout') }}" style="margin-top:24px;">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <button class="btn btn-primary">Sign out</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

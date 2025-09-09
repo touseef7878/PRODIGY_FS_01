@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Secure Authentication System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button type="button" data-theme-toggle aria-label="Toggle theme">
+            🌙
+        </button>
+    </div>
+    
+    <!-- Flash Messages -->
+    <div class="flash-container">
+        {% include 'components/flash.html' %}
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Loading Spinner -->
+    {% include 'components/spinner.html' %}
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

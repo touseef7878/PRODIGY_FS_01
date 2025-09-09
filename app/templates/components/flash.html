@@ -1,0 +1,12 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} fade-in-up" data-flash>
+                <span class="alert-content">{{ message }}</span>
+                <button type="button" class="alert-close" onclick="this.parentElement.remove()">
+                    ×
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}

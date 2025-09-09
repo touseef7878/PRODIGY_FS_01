@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}403 - Forbidden{% endblock %}
+
+{% block content %}
+<div class="main">
+  <div class="error-container container-glass fade-in-up" style="padding:32px;">
+    <h1 class="error-code">403</h1>
+    <p class="error-message">You don’t have permission to access this resource.</p>
+    <div class="dashboard-nav" style="justify-content:center;">
+      <a class="nav-link" href="{{ url_for('main.dashboard') }}">Back to Dashboard</a>
+      <a class="nav-link" href="{{ url_for('auth.login') }}">Sign in</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
